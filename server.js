@@ -30,8 +30,11 @@ app.use(interceptor.authUser);
 var userdata = [];
 var uid = 1;
 app.use(cors());
-
 app.use(express.static("public"));
+
+app.get("/", (req,res) =>{
+  res.send("Welcome to express home page");
+});
 
 router.get("/", (req, res) => {
   res.send("Welcome to Express App...!");
